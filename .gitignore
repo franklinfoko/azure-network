@@ -1,0 +1,45 @@
+# --- Terraform ---------------------------------------------------------------
+
+# Local provider/module cache. Re-created by `terraform init`.
+**/.terraform/*
+
+# State. Contains resource IDs, subscription/tenant IDs and, for some
+# providers, secrets in plaintext. Never commit it.
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Crash logs.
+crash.log
+crash.*.log
+
+# Variable files routinely hold environment-specific or sensitive values, so
+# they are ignored by default. terraform.tfvars is the exception here: no
+# variable in this configuration declares a default, so the config cannot plan
+# without it, and it holds only names, regions and CIDRs - no secrets. Keep it
+# that way; anything sensitive belongs in an env var or a *.auto.tfvars file,
+# which stay ignored.
+*.tfvars
+*.tfvars.json
+
+
+# CLI config that can contain credentials.
+.terraformrc
+terraform.rc
+
+# Saved plans are binary and can embed sensitive values.
+*.tfplan
+*.tfplan.*
+
+# Override files are for local experimentation.
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# The dependency lock file SHOULD be committed - it pins provider checksums.
+!.terraform.lock.hcl
+
+# --- Editors / OS ------------------------------------------------------------
+.DS_Store
+Thumbs.db
